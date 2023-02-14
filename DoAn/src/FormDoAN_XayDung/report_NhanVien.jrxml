@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" language="groovy" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="7191fbb0-8668-4b59-80b2-22294140ae64">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<style name="Title" forecolor="#FFFFFF" fontName="Times New Roman" fontSize="50" isBold="false" pdfFontName="Times-Bold"/>
+	<style name="SubTitle" forecolor="#CCCCCC" fontName="Times New Roman" fontSize="18" isBold="false" pdfFontName="Times-Roman"/>
+	<style name="Column header" forecolor="#666666" fontName="Times New Roman" fontSize="14" isBold="true" pdfFontName="Times-Roman"/>
+	<style name="Detail" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman"/>
+	<style name="Row" mode="Transparent" fontName="Times New Roman" pdfFontName="Times-Roman">
+		<conditionalStyle>
+			<conditionExpression><![CDATA[$V{REPORT_COUNT}%2 == 0]]></conditionExpression>
+			<style mode="Opaque" backcolor="#F0EFEF"/>
+		</conditionalStyle>
+	</style>
+	<queryString language="SQL">
+		<![CDATA[SELECT
+     vw_LuongNhanVien."MANV" AS vw_LuongNhanVien_MANV,
+     vw_LuongNhanVien."HoTen" AS vw_LuongNhanVien_HoTen,
+     vw_LuongNhanVien."SONGAYLAMVIEC" AS vw_LuongNhanVien_SONGAYLAMVIEC,
+     vw_LuongNhanVien."Sogiotangca" AS vw_LuongNhanVien_Sogiotangca,
+     vw_LuongNhanVien."SONGAYPHEP" AS vw_LuongNhanVien_SONGAYPHEP,
+     vw_LuongNhanVien."SONGAYKHONGPHEP" AS vw_LuongNhanVien_SONGAYKHONGPHEP,
+     vw_LuongNhanVien."LUONGCB" AS vw_LuongNhanVien_LUONGCB,
+     vw_LuongNhanVien."PhuCap" AS vw_LuongNhanVien_PhuCap,
+     vw_LuongNhanVien."Thue" AS vw_LuongNhanVien_Thue,
+     vw_LuongNhanVien."LoaiCD" AS vw_LuongNhanVien_LoaiCD,
+     vw_LuongNhanVien."TIENCD" AS vw_LuongNhanVien_TIENCD,
+     vw_LuongNhanVien."Luong" AS vw_LuongNhanVien_Luong
+FROM
+     "dbo"."vw_LuongNhanVien" vw_LuongNhanVien]]>
+	</queryString>
+	<field name="vw_LuongNhanVien_MANV" class="java.lang.String"/>
+	<field name="vw_LuongNhanVien_HoTen" class="java.lang.String"/>
+	<field name="vw_LuongNhanVien_SONGAYLAMVIEC" class="java.lang.Integer"/>
+	<field name="vw_LuongNhanVien_Sogiotangca" class="java.lang.Integer"/>
+	<field name="vw_LuongNhanVien_SONGAYPHEP" class="java.lang.Integer"/>
+	<field name="vw_LuongNhanVien_SONGAYKHONGPHEP" class="java.lang.Integer"/>
+	<field name="vw_LuongNhanVien_LUONGCB" class="java.math.BigDecimal"/>
+	<field name="vw_LuongNhanVien_PhuCap" class="java.math.BigDecimal"/>
+	<field name="vw_LuongNhanVien_Thue" class="java.lang.Double"/>
+	<field name="vw_LuongNhanVien_LoaiCD" class="java.lang.String"/>
+	<field name="vw_LuongNhanVien_TIENCD" class="java.math.BigDecimal"/>
+	<field name="vw_LuongNhanVien_Luong" class="java.lang.Double"/>
+	<group name="vw_LuongNhanVien_HoTen">
+		<groupExpression><![CDATA[$F{vw_LuongNhanVien_HoTen}]]></groupExpression>
+		<groupHeader>
+			<band height="27">
+				<frame>
+					<reportElement mode="Opaque" x="0" y="3" width="802" height="24" forecolor="#B89F7D" backcolor="#000000" uuid="3db035f9-3c57-4056-822f-21ad7f26e097"/>
+					<textField isStretchWithOverflow="true">
+						<reportElement style="SubTitle" x="2" y="0" width="695" height="24" forecolor="#FFFFFF" uuid="2e20f541-6ae6-4bcc-ba9f-e6bb6b7349a9"/>
+						<textElement>
+							<font isBold="false"/>
+						</textElement>
+						<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_HoTen}]]></textFieldExpression>
+					</textField>
+				</frame>
+			</band>
+		</groupHeader>
+		<groupFooter>
+			<band height="6"/>
+		</groupFooter>
+	</group>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="102" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="66" backcolor="#000000" uuid="0aec0875-09bc-4b20-a177-ffb67b4a0326"/>
+				<staticText>
+					<reportElement style="Title" x="0" y="0" width="456" height="66" uuid="7d44d85e-1de6-4044-8ef4-46e16cc41053"/>
+					<box topPadding="4" leftPadding="4" bottomPadding="4" rightPadding="4"/>
+					<textElement verticalAlignment="Bottom">
+						<font isBold="false"/>
+					</textElement>
+					<text><![CDATA[Báo Cáo Nhân Viên]]></text>
+				</staticText>
+				<staticText>
+					<reportElement style="SubTitle" x="370" y="37" width="316" height="29" uuid="44f1f7f3-8678-4e3f-b3bb-a73fd271d4ba"/>
+					<textElement textAlignment="Right">
+						<font size="22" isBold="false"/>
+					</textElement>
+					<text><![CDATA[Cửa hàng CirCle K]]></text>
+				</staticText>
+			</frame>
+			<frame>
+				<reportElement mode="Opaque" x="0" y="70" width="802" height="32" forecolor="#000000" backcolor="#CC0000" uuid="bab0193b-055c-4975-a85c-6087f6fa0830"/>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement x="553" y="12" width="144" height="20" forecolor="#FFFFFF" uuid="08d0bdae-f87c-40df-9ef9-989bcfe4a98e"/>
+					<textElement textAlignment="Right">
+						<font size="12"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="18" splitType="Stretch">
+			<staticText>
+				<reportElement style="Column header" x="0" y="0" width="72" height="18" forecolor="#000000" uuid="0b7b2b23-d576-42a5-8019-376486ed92cc"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[MANV]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="72" y="0" width="72" height="18" forecolor="#000000" uuid="93bd1419-1058-4e17-82c2-78f6e8c38136"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Số Ngày]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="144" y="0" width="72" height="18" forecolor="#000000" uuid="cca5c837-dc2b-45a4-b9e7-36ddc6495a9e"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Số giờ]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="216" y="0" width="72" height="18" forecolor="#000000" uuid="230d2bf6-c1d7-4702-9a33-508bda3a15aa"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Số ngày phép]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="288" y="0" width="72" height="18" forecolor="#000000" uuid="4e7ec248-4f7d-411c-bac9-c01521ffb8c0"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[số ngày không phép]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="360" y="0" width="72" height="18" forecolor="#000000" uuid="217ce038-4ef6-4650-b408-91cd4277042b"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lương CB]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="432" y="0" width="72" height="18" forecolor="#000000" uuid="d1202fb1-f5a8-4321-9396-538a1d652f0a"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Phụ cấp]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="504" y="0" width="72" height="18" forecolor="#000000" uuid="96f6b56e-f647-49b6-8a75-a801aef180a4"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[thuế]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="576" y="0" width="72" height="18" forecolor="#000000" uuid="44176706-76e5-4d73-bf78-21ec48758366"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[loai cd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="648" y="0" width="72" height="18" forecolor="#000000" uuid="f17e1a47-754f-44fd-9263-f3f8f0c3a91f"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[tien cd]]></text>
+			</staticText>
+			<staticText>
+				<reportElement style="Column header" x="720" y="0" width="72" height="18" forecolor="#000000" uuid="cc0f3abb-1c69-4ccd-9542-cb45b3f00004"/>
+				<textElement>
+					<font isBold="false"/>
+				</textElement>
+				<text><![CDATA[Lương]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="18" splitType="Stretch">
+			<frame>
+				<reportElement style="Row" mode="Opaque" x="0" y="0" width="797" height="18" uuid="0ca93ca1-e0db-4932-87e5-f79330d749d9"/>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="0" y="0" width="72" height="18" uuid="9892168f-68c3-46cc-bc57-40d8d3d5729d"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_MANV}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="72" y="0" width="72" height="18" uuid="1546c175-f50b-415c-9a50-b9d472427365"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_SONGAYLAMVIEC}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="144" y="0" width="72" height="18" uuid="ba222f36-b1c8-4154-80fd-6eb56aeed5a8"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_Sogiotangca}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="216" y="0" width="72" height="18" uuid="7a644fa2-0e5f-4c3c-abf5-fca2dc8e4a66"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_SONGAYPHEP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="288" y="0" width="72" height="18" uuid="d7d7f493-f556-4b57-8041-d25d6647f268"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_SONGAYKHONGPHEP}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="360" y="0" width="72" height="18" uuid="6e09dba6-417b-4436-b1bd-cda499e6b8a7"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_LUONGCB}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="432" y="0" width="72" height="18" uuid="ee9b4338-1208-4e2c-841f-270eda46bde3"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_PhuCap}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="504" y="0" width="72" height="18" uuid="d577cdc6-8d96-4937-b077-6ca07ab535ac"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_Thue}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="576" y="0" width="72" height="18" uuid="b88eb89a-4bed-47ce-ae35-882cf12eef19"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_LoaiCD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="648" y="0" width="72" height="18" uuid="c1adb192-2f3d-4dec-9a88-531ce80ef828"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{vw_LuongNhanVien_TIENCD}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement style="Detail" positionType="Float" x="720" y="0" width="72" height="18" uuid="b801a344-ff01-4f53-bac0-eb4c52e77a09"/>
+					<textElement>
+						<font size="14"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.text.DecimalFormat("###,###,###").format($F{vw_LuongNhanVien_Luong})]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="7" splitType="Stretch">
+			<line>
+				<reportElement positionType="FixRelativeToBottom" x="0" y="3" width="555" height="1" uuid="6534a286-7ca1-40af-b1d3-d71424b81549"/>
+				<graphicElement>
+					<pen lineWidth="0.5" lineColor="#999999"/>
+				</graphicElement>
+			</line>
+		</band>
+	</columnFooter>
+	<pageFooter>
+		<band height="25" splitType="Stretch">
+			<frame>
+				<reportElement mode="Opaque" x="0" y="0" width="802" height="25" forecolor="#D0B48E" backcolor="#000000" uuid="d5baf5ae-ba9d-4042-b5e3-b92504f7575c"/>
+				<textField evaluationTime="Report">
+					<reportElement style="Column header" x="757" y="3" width="40" height="20" forecolor="#FFFFFF" uuid="bf0681e4-044b-406b-a48d-20bd093e20cd"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+				</textField>
+				<textField>
+					<reportElement style="Column header" x="677" y="3" width="80" height="20" forecolor="#FFFFFF" uuid="ab09552d-abdd-4752-94f1-dffdcff1d706"/>
+					<textElement textAlignment="Right" verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+				</textField>
+				<textField pattern="EEEEE dd MMMMM yyyy">
+					<reportElement style="Column header" x="2" y="3" width="197" height="20" forecolor="#FFFFFF" uuid="b87338f0-528c-4db6-9b0c-bd4742bcf2dc"/>
+					<textElement verticalAlignment="Middle">
+						<font size="10" isBold="false"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
